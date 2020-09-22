@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MapArea</string>
+
+    <string name="calculate_area">Calculate Area</string>
+
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="don_t_have_any_account">Don\'t have any Account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="agree_to_our_terms_and_condition">Agree to our terms and Condition</string>
+    <string name="already_have_any_account">Already have Account!</string>
+
+</resources>
