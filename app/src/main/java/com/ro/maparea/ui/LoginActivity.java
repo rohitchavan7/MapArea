@@ -10,9 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ro.maparea.R;
+
 public class LoginActivity extends AppCompatActivity {
 
-    public ImageView signup,go;
+    public ImageView mSignUp,go;
     public TextView textLogin, text1;
     public EditText email,password;
 
@@ -21,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        signup = (ImageView) findViewById(R.id.singupbtn);
+        mSignUp = (ImageView) findViewById(R.id.singupbtn);
         go = (ImageView) findViewById(R.id.imggo);
         email = (EditText) findViewById(R.id.editTextTextEmailAddress);
         password = (EditText) findViewById(R.id.editTextTextPassword);
@@ -37,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i =new Intent(LoginActivity.this, SignUpActivity.class);
