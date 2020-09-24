@@ -24,8 +24,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
 import com.ro.maparea.R;
 import com.ro.maparea.utils.GPSTracker;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,11 +116,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     LatLng currentLocation = new LatLng(location.getLatitude(),location.getLongitude());
 
                     if (isDrawPolyline){
-                        //>>>--->>>> mPolyLineList.add(currentLocation);
+                        mPolyLineList.add(currentLocation);
 
                         mOptions.add(currentLocation);
                         mMap.addPolyline(mOptions);
 
+                        listIntoJsonArray(mPolyLineList);
 
                     }
 
@@ -147,6 +151,28 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 //                    });
         }
     }
+
+    //LatLng ArrayList to jsonArray
+    private void listIntoJsonArray(List<LatLng> latLngList){
+
+        if (latLngList != null){
+
+            // convert list to json
+            Gson gson = new Gson();
+            String jsonCartList = gson.toJson(latLngList);
+
+            Toast.makeText(this, "json: " + jsonCartList, Toast.LENGTH_LONG).show();
+
+
+        }
+
+
+
+
+    }
+
+
+
 
     //current device location
     private void getCurrentLocation(){
